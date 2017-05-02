@@ -5,25 +5,12 @@ class OLS:
         self.x = x
         self.y = y
 
-    """Example function with types documented in the docstring.
-
-    `PEP 484`_ type annotations are supported. If attribute, parameter, and
-    return types are annotated according to `PEP 484`_, they do not need to be
-    included in the docstring:
+    """Method for independent and dependent variable.
 
     Parameters
     ----------
-    param1 : int
-        The first parameter.
-    param2 : str
-        The second parameter.
-
-    Returns
-    -------
-    bool
-        True if successful, False otherwise.
-
-    .. _PEP 484:
-        https://www.python.org/dev/peps/pep-0484/
-
+    x : int
+        The first independent parameter.
+    y : int
+        The second dependent parameter.
     """
