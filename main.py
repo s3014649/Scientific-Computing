@@ -1,1 +1,13 @@
-# This file should call the OLS class and run on some data set
+import pandas as pd
+
+
+data = pd.read_csv("./data/winequality-white.csv",
+                   delimiter=";")
+
+y = data["quality"]
+X = data.drop("quality", axis=1)
+
+# Below, call OLS on y and X. You may access the data itself using y.values, and
+# X.values (those return a vector/matrix with just the data and not the column
+# names.
+
