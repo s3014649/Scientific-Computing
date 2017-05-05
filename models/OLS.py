@@ -2,15 +2,16 @@
 
 class OLS:
     def __init__(self, x, y):
+        #Method for independent and dependent variable.
+
         self.x = x
         self.y = y
 
-    """Method for independent and dependent variable.
 
-    Parameters
+    """Parameters
     ----------
-    x : int
+    x : ndarray
         The first independent parameter.
-    y : int
+    y : ndarray
         The second dependent parameter.
     """

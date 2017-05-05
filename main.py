@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 data = pd.read_csv("./data/winequality-white.csv",
                    delimiter=";")
 
@@ -12,4 +11,5 @@ X = data.drop("quality", axis=1)
 # names.
 
 from models import OLS
-# Code...
+
+model = OLS(x, y)
