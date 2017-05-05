@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 data = pd.read_csv("./data/winequality-white.csv",
                    delimiter=";")
 
@@ -11,3 +10,6 @@ X = data.drop("quality", axis=1)
 # X.values (those return a vector/matrix with just the data and not the column
 # names.
 
+from models import OLS
+
+model = OLS(x, y)
