@@ -1,0 +1,27 @@
+import numpy as np
+from scipy.optimize import least_squares
+## dit zijn twee "random" array's die ik heb gebruikt als input om te testen
+u = np.array([7.0, 6.0, 5.0, 4.0, 3.0, 2.0])
+y = np.array([14.0, 12.0, 10.0, 8.0, 6.0, 4.0])
+
+## dit is de least square optimization van scipy. deze doet het in principe alleen weet ik niet wat hier verder uitgehaald kan worden.
+## nu geeft die de cost terug (return)
+# deze komt dan ook letterlijk van de scipy website af.
+def __cost_function(u, y):
+    def model(x, u):
+        return x[0] * (u ** 2 + x[1] * u) / (u ** 2 + x[2] * u + x[3])
+    def fun(x, u, y):
+        return model(x, u) - y
+    x0 = np.array([2.5, 3.9, 4.15, 3.9])
+    res = least_squares(fun, x0, bounds=(0, 100), args=(u, y), verbose=1)
+    return(res.cost)
+
+
+## dit is de beta calculatie
+def fit(x,y):
+    xmean = np.mean(x)
+    ymean = np.mean(y)
+    ols_beta = (((x - xmean) * (y - ymean) / ((x - xmean)*(x - xmean))))
+    return(ols_beta[1])
+
+
