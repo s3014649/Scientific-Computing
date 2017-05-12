@@ -16,13 +16,16 @@ class OLS:
         self.x = x
         self.y = y
 
-    def _cost_function(self):
-        def fun(j, x, y):
-            return ((j * x) - y)*((j * x) - y)
+    @staticmethod
+    def _cost_function(beta, x, y):
+        for row in x:
+            for m in row[0:11]:
+                return ((beta * m) - y) * ((beta * m) - y)
+
 
     def fit(self):
         x0 = np.repeat(1, len(self.x))
-        res = least_squares(self._cost_function(), x0, args=(self.x, self.y))
+        res = least_squares(OLS._cost_function, x0, args=(self.x, self.y))
         self.beta = res.x
 
 
