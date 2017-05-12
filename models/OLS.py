@@ -27,5 +27,3 @@ class OLS:
         x0 = np.repeat(1, len(self.x))
         res = least_squares(OLS._cost_function, x0, args=(self.x, self.y))
         self.beta = res.x
-
-
